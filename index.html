@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kimberly Tungcab</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffe4ec, #ffd6e8, #fff0f5);
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .container {
+            display: flex;
+            gap: 25px;
+            max-width: 1100px;
+            width: 100%;
+        }
+
+
+        .sidebar {
+            width: 260px;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(255, 182, 193, 0.3);
+        }
+
+        .sidebar img {
+            width: 200px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .sidebar h2 {
+            font-size: 20px;
+            color: #d63384;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: #ffe4ec;
+            color: #d63384;
+            font-size: 13px;
+            margin: 10px 0 20px;
+        }
+
+        .info {
+            text-align: left;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .info p {
+            margin-bottom: 12px;
+        }
+
+
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(255, 182, 193, 0.3);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h1 {
+            color: #d63384;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            line-height: 1.6;
+            color: #444;
+        }
+
+
+        .skills span {
+            display: inline-block;
+            background: #ffe4ec;
+            color: #d63384;
+            padding: 6px 12px;
+            border-radius: 15px;
+            margin: 5px;
+            font-size: 13px;
+        }
+
+
+        .project {
+            margin-bottom: 15px;
+        }
+
+        .project h3 {
+            color: #d63384;
+            margin-bottom: 5px;
+        }
+
+
+        .contact a {
+            display: block;
+            color: #d63384;
+            margin-top: 5px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+
+        <div class="sidebar">
+            <img src="kim.jpg" alt="Profile">
+
+            <h2>Kimberly Tungcab</h2>
+            <div class="badge">IT Student</div>
+
+            <div class="info">
+                <p><strong>Email:</strong><br> kimsullanotungcab@gmail.com</p>
+                <p><strong>Location:</strong><br> Philippines</p>
+            </div>
+        </div>
+
+
+        <div class="content">
+
+
+            <div class="card">
+                <h1>ABOUT ME</h1>
+                <p>
+                    Hi! I'm Kimberly Tungcab, a Diploma in Information Technology student
+                    at PUP Sto. Tomas Campus. I want to learn more about technology
+                    and explore the world of web development.
+                </p>
+
+                <br>
+
+                <p>
+                    I'm still improving my coding skills, but I'm passionate about learning
+                    and growing. My goal is to become a skilled developer and create
+                    meaningful digital experiences.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <h1>SKILLS</h1>
+                <div class="skills">
+                    <span> Basic HTML</span>
+                    <span>Basic CSS</span>
+                    <span>Basic JavaScript</span>
+                    <span>Teamwork</span>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <h1>PROJECTS</h1>
+
+                <div class="project">
+                    <h3>Personal Website</h3>
+                    <p>A simple portfolio website using HTML and CSS.</p>
+                </div>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="card contact">
+                <h1>CONTACT</h1>
+                <p>You can reach me through:</p>
+                <a href="https://www.facebook.com/">Facebook</a>
+                <a href="kwmvauxely">Instagram</a>
+                <a href="kimxxzly.github.io">GitHub</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
