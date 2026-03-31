@@ -126,6 +126,44 @@
             text-decoration: none;
         }
 
+        .projects-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .project {
+            background: #fff0f5;
+            padding: 20px;
+            border-radius: 15px;
+            width: 220px;
+            box-shadow: 0 8px 20px rgba(255, 182, 193, 0.3);
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+        }
+
+        .project h3 {
+            color: #d63384;
+            margin-bottom: 15px;
+        }
+
+        .project button {
+            padding: 10px 15px;
+            background: linear-gradient(45deg, #ff4da6, #d63384);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .project button:hover {
+            opacity: 0.9;
+        }
+
         @media (max-width: 768px) {
 
             body {
@@ -141,20 +179,20 @@
             }
 
             .info {
-                text-align: center;
+                text-align: left;
             }
 
             .card {
-                text-align: center;
+                text-align: left;
                 padding: 20px;
             }
 
             .skills {
-                text-align: center;
+                text-align: left;
             }
 
             .contact a {
-                text-align: center;
+                text-align: left;
             }
         }
     </style>
@@ -206,11 +244,17 @@
             </div>
 
             <div class="card">
-                <h1>PROJECTS</h1>
+                <h1>ACTIVITIES</h1>
 
-                <div class="project">
-                    <h3>Personal Website</h3>
-                    <p>A simple portfolio website using HTML and CSS.</p>
+                <div class="projects-container">
+
+                    <div class="project">
+                        <h3>A02</h3>
+                        <button onclick="window.open('https://kimxxzly.github.io/A02/')">
+                            View Activity A02
+                        </button>
+                    </div>
+
                 </div>
             </div>
 
