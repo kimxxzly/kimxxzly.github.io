@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ACER</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">ACER</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index1.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5 mt-5 flex-grow-1">
+        <div class="row justify-content-center">
+
+            <div class="col-md-4">
+                <div class="card shadow-lg text-center p-3">
+                    <img src="https://i.pinimg.com/1200x/6e/e2/c4/6ee2c4ec1738c12858953810dfd60e92.jpg"
+                        class="card-img-top" style="height:150px; object-fit:contain;">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Acer Aspire 5</h5>
+                        <p class="card-text small">
+                            13th/12th Gen Intel Core<br>
+                            AMD Ryzen 5000/7000<br>
+                            8GB–16GB RAM<br>
+                            512GB–1TB SSD
+                        </p>
+                        <h5 class="text-success">₱35,995</h5>
+                        <button class="btn btn-danger" onclick="openModal()">BUY NOW</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="bg-black text-white text-center py-3 mt-auto">
+        © 2026 ACER
+    </footer>
+
+    <div class="modal fade" id="formModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content text-center p-3">
+                <h5>Fill Up Form</h5>
+                <input type="text" id="name" class="form-control my-2" placeholder="Your Name">
+                <input type="text" id="address" class="form-control my-2" placeholder="Address">
+                <button class="btn btn-success" onclick="submitForm()">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="successModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content text-center p-3">
+                <h5>Order Successful!</h5>
+                <button class="btn btn-primary" onclick="closeAll()">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        let formModal = new bootstrap.Modal(document.getElementById('formModal'));
+        let successModal = new bootstrap.Modal(document.getElementById('successModal'));
+
+        function openModal() {
+            formModal.show();
+        }
+
+        function submitForm() {
+            let name = document.getElementById("name").value;
+            let address = document.getElementById("address").value;
+
+            if (name !== "" && address !== "") {
+                formModal.hide();
+                successModal.show();
+            } else {
+                alert("Please fill up all fields");
+            }
+        }
+
+        function closeAll() {
+            successModal.hide();
+        }
+    </script>
+
+</body>
+
+</html>
