@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚔️ Demon Slayer Corps</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #ff4444;
+            --gold: #ffd700;
+            --dark-gold: #cc8800;
+            --blade-glow: #ffaa00;
+            --gem-green: #00ff88;
+            --shadow-dark: rgba(0,0,0,0.8);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a0a;
+            color: white;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .bg {
+            position: fixed;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255,68,68,0.25) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255,100,100,0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 10%, rgba(255,215,0,0.15) 0%, transparent 40%),
+                radial-gradient(circle at 30% 60%, rgba(255,68,68,0.15) 0%, transparent 50%);
+            z-index: -2;
+            animation: bgPulse 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes bgPulse {
+            0% { opacity: 0.5; transform: scale(1); }
+            100% { opacity: 0.8; transform: scale(1.02); }
+        }
+
+        .particles {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, var(--gold), transparent);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--gold);
+            animation: particleFloat 15s linear infinite;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) translateX(0) scale(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% {
+                transform: translateY(-40vh) translateX(120px) scale(1.4) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 clamp(3rem, 6vw, 8rem);
+            gap: clamp(4rem, 8vw, 10rem);
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .text-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .text-content h1 {
+            font-size: clamp(4rem, 10vw, 8rem);
+            background: linear-gradient(45deg, var(--primary-red), var(--gold), #ff6666, var(--blade-glow), var(--primary-red));
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: 
+                gradientShift 3s ease infinite, 
+                textGlow 2.5s ease-in-out infinite alternate;
+            margin-bottom: 2.5rem;
+            line-height: 1;
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            position: relative;
+        }
+
+        .text-content h1::after {
+            content: '⚔️';
+            position: absolute;
+            font-size: 0.25em;
+            top: -0.2em;
+            right: -0.4em;
+            animation: swordEmojiFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes textGlow {
+            0% { 
+                filter: drop-shadow(0 0 40px var(--primary-red)) brightness(1);
+            }
+            100% { 
+                filter: drop-shadow(0 0 80px var(--gold)) brightness(1.15);
+            }
+        }
+
+        @keyframes swordEmojiFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(180deg); }
+        }
+
+        .subtitle {
+            font-size: clamp(1.4rem, 2.5vw, 2rem);
+            color: #ffd700;
+            margin-bottom: 3.5rem;
+            opacity: 0.92;
+            font-weight: 300;
+            line-height: 1.6;
+            max-width: 500px;
+        }
+
+        .cta-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .photo-container {
+            flex: 1;
+            position: relative;
+            height: 70vh;
+            min-width: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 25px;
+            box-shadow: 
+                0 40px 100px rgba(255,68,68,0.6),
+                0 20px 60px rgba(0,0,0,0.9),
+                inset 0 0 50px rgba(255,255,255,0.08);
+            filter: 
+                brightness(1.15) 
+                contrast(1.2) 
+                saturate(1.25)
+                drop-shadow(0 30px 80px rgba(255,68,68,0.5));
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.05) translateY(-10px);
+            filter: 
+                brightness(1.25) 
+                contrast(1.3) 
+                saturate(1.35)
+                drop-shadow(0 50px 120px rgba(255,165,0,0.8));
+            box-shadow: 
+                0 60px 140px rgba(255,68,68,0.9),
+                0 30px 80px rgba(0,0,0,1),
+                inset 0 0 60px rgba(255,255,255,0.12);
+        }
+
+        .image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, 
+                rgba(255,68,68,0.35) 0%, 
+                rgba(255,215,0,0.25) 50%, 
+                transparent 100%);
+            border-radius: 25px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+
+        .hero-image:hover + .image-overlay,
+        .photo-container:hover .image-overlay {
+            opacity: 1;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary-red), #cc0000);
+            color: var(--gold);
+            padding: 1.4rem 3.5rem;
+            font-size: 1.25rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-transform: uppercase;
+            font-weight: 800;
+            box-shadow: 
+                0 15px 50px rgba(255, 68, 68, 0.6),
+                inset 0 1px 0 rgba(255,255,255,0.25);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            min-width: 260px;
+            justify-content: center;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.7s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-6px) scale(1.08);
+            box-shadow: 
+                0 25px 60px rgba(255, 68, 68, 0.8),
+                inset 0 1px 0 rgba(255,255,255,0.4);
+        }
+
+        footer {
+            background: linear-gradient(180deg, rgba(10,10,10,0.95), #000);
+            padding: 5rem 2rem 3rem;
+            text-align: center;
+            border-top: 4px solid var(--primary-red);
+            position: relative;
+        }
+
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 3rem 2rem;
+                gap: 4rem;
+            }
+            
+            .text-content {
+                max-width: 100%;
+            }
+            
+            .photo-container {
+                height: 50vh;
+                min-width: 300px;
+                max-width: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 2rem 1.5rem;
+            }
+            
+            .cta-section {
+                width: 100%;
+                align-items: stretch;
+            }
+            
+            .btn-primary {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 1.2s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="particles" id="particles"></div>
+
+    <section class="hero fade-in">
+        <div class="text-content">
+            <div class = h1>Kimetsu no Yaiba</div>
+            <p class="subtitle">
+                Wield the Nichirin Blade. Master Breathing. 
+                Protect humanity from the eternal night.
+            </p>
+            <div class="cta-section">
+                <a href="index.html" class="btn-primary">
+                    <i class="fas fa-play"></i>
+                    Get Started
+                </a>
+            </div>
+        </div>
+
+        <div class="photo-container">
+
+            <img 
+                src="https://i.pinimg.com/736x/35/64/ec/3564ec632274be1cb97fdde5e3a02f21.jpg" 
+                alt="Demon Slayer Corps - Tanjiro training with Nichirin Blade"
+                class="hero-image" 
+                loading="eager"
+            />
+            <div class="image-overlay"></div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h4><i class="fas fa-sword"></i><i>DEMON SLAYER CORPS</i></h4>
+
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        class ParticleSystem {
+            constructor() {
+                this.container = document.getElementById('particles');
+                this.particles = [];
+                this.init();
+            }
+
+            init() {
+                for (let i = 0; i < 8; i++) {
+                    this.createParticle();
+                }
+                setInterval(() => this.createParticle(), 1000);
+            }
+
+            createParticle() {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (10 + Math.random() * 8) + 's';
+                particle.style.animationDelay = Math.random() * 3 + 's';
+                
+                this.container.appendChild(particle);
+                this.particles.push(particle);
+
+                particle.addEventListener('animationend', () => {
+                    particle.remove();
+                    this.particles = this.particles.filter(p => p !== particle);
+                });
+            }
+        }
+
+        new ParticleSystem();
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        observer.observe(document.querySelector('.hero'));
+
+        const heroImage = document.querySelector('.hero-image');
+        heroImage.addEventListener('click', () => {
+            heroImage.style.transform = 'scale(0.95) rotate(2deg)';
+            setTimeout(() => {
+                heroImage.style.transform = '';
+            }, 300);
+        });
+
+        document.querySelectorAll('.btn-primary').forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+                btn.style.transform = 'translateY(-2px) scale(1.02)';
+            });
+            
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = '';
+            });
+        });
+    </script>
+</body>
+</html>
