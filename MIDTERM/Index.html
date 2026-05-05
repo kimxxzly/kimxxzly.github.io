@@ -48,10 +48,27 @@
     }
 
     @keyframes hellFlames {
-      0%, 100% { opacity: 0.6; transform: scale(1); }
-      25% { opacity: 0.9; transform: scale(1.02); }
-      50% { opacity: 0.7; transform: scale(1.01); }
-      75% { opacity: 0.85; transform: scale(1.03); }
+
+      0%,
+      100% {
+        opacity: 0.6;
+        transform: scale(1);
+      }
+
+      25% {
+        opacity: 0.9;
+        transform: scale(1.02);
+      }
+
+      50% {
+        opacity: 0.7;
+        transform: scale(1.01);
+      }
+
+      75% {
+        opacity: 0.85;
+        transform: scale(1.03);
+      }
     }
 
     .bg-demon-lightning {
@@ -67,9 +84,21 @@
     }
 
     @keyframes lightningFlicker {
-      0%, 90%, 100% { opacity: 0.1; }
-      5%, 95% { opacity: 0.6; }
-      10% { opacity: 0.3; }
+
+      0%,
+      90%,
+      100% {
+        opacity: 0.1;
+      }
+
+      5%,
+      95% {
+        opacity: 0.6;
+      }
+
+      10% {
+        opacity: 0.3;
+      }
     }
 
     .bg-blood-veins {
@@ -85,8 +114,17 @@
     }
 
     @keyframes veinPulse {
-      0%, 100% { opacity: 0.4; transform: scale(1); }
-      50% { opacity: 0.7; transform: scale(1.015); }
+
+      0%,
+      100% {
+        opacity: 0.4;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.7;
+        transform: scale(1.015);
+      }
     }
 
     .demon-eye {
@@ -101,12 +139,33 @@
     }
 
     @keyframes eyeStare {
-      0% { transform: scale(1) rotate(0deg); opacity: 0.3; }
-      10% { opacity: 0.8; }
-      20% { transform: scale(1.2) rotate(180deg); opacity: 0.4; }
-      30% { opacity: 0.7; }
-      40% { transform: scale(0.9) rotate(360deg); opacity: 0.2; }
-      100% { transform: scale(1) rotate(720deg); opacity: 0.3; }
+      0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.3;
+      }
+
+      10% {
+        opacity: 0.8;
+      }
+
+      20% {
+        transform: scale(1.2) rotate(180deg);
+        opacity: 0.4;
+      }
+
+      30% {
+        opacity: 0.7;
+      }
+
+      40% {
+        transform: scale(0.9) rotate(360deg);
+        opacity: 0.2;
+      }
+
+      100% {
+        transform: scale(1) rotate(720deg);
+        opacity: 0.3;
+      }
     }
 
     .bg-steel-grid {
@@ -124,8 +183,13 @@
     }
 
     @keyframes gridShift {
-      0% { background-position: 0 0, 0 0, 0 0, 0 0; }
-      100% { background-position: 40px 40px, 40px 40px, 80px 80px, 80px 80px; }
+      0% {
+        background-position: 0 0, 0 0, 0 0, 0 0;
+      }
+
+      100% {
+        background-position: 40px 40px, 40px 40px, 80px 80px, 80px 80px;
+      }
     }
 
     .smoke-dark {
@@ -151,8 +215,13 @@
     }
 
     @keyframes hellSmoke {
-      0% { transform: translateX(0%) translateY(0%) scale(1) rotate(0deg); }
-      100% { transform: translateX(-30%) translateY(-20%) scale(1.15) rotate(5deg); }
+      0% {
+        transform: translateX(0%) translateY(0%) scale(1) rotate(0deg);
+      }
+
+      100% {
+        transform: translateX(-30%) translateY(-20%) scale(1.15) rotate(5deg);
+      }
     }
 
     .ember {
@@ -167,10 +236,23 @@
     }
 
     @keyframes emberFloat {
-      0% { transform: translateY(100vh) scale(0); opacity: 0; }
-      10% { opacity: 1; }
-      90% { opacity: 1; }
-      100% { transform: translateY(-20vh) scale(1.2); opacity: 0; }
+      0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      90% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-20vh) scale(1.2);
+        opacity: 0;
+      }
     }
 
     .title {
@@ -189,8 +271,15 @@
     }
 
     @keyframes bloodFlow {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
+
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
     }
 
     .sidebar {
@@ -414,8 +503,13 @@
     }
 
     @keyframes shine {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
+      0% {
+        transform: translateX(-100%);
+      }
+
+      100% {
+        transform: translateX(100%);
+      }
     }
 
     .modal-content {
@@ -449,6 +543,7 @@
         position: static;
         margin-bottom: 2rem;
       }
+
       .main-content {
         order: 1;
       }
@@ -459,9 +554,11 @@
         font-size: 3rem;
         margin: 2rem 0;
       }
+
       .card img {
         height: 240px;
       }
+
       .home-link {
         font-size: 1rem;
         padding: 14px 20px;
@@ -482,113 +579,115 @@
   <div class="demon-eye" style="left:75%; animation-delay:-8s; top:60%;"></div>
   <div class="demon-eye" style="left:45%; animation-delay:-15s; top:20%;"></div>
 
-    
-    <div class="row">
-      <div class="col-lg-3 col-md-4 col-12 sidebar">
-        <a href="HOMPAGE.html" class="home-link">
-          <i class="fas fa-home me-2"></i>Back to Home
-        </a>
 
-        <div class="search-container p-0">
-          <div class="d-flex">
-            <input type="text" id="searchInput" class="search-input flex-grow-1" placeholder="🔍 Search Characters..."
-              onkeyup="searchCharacters()">
-            <button class="search-btn" onclick="searchCharacters()">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
-        </div>
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-12 sidebar">
+      <a href="HOMPAGE.html" class="home-link">
+        <i class="fas fa-home me-2"></i>Back to Home
+      </a>
 
-        <div class="mt-4 p-4 bg-dark bg-opacity-60 rounded-3 border border-secondary">
-          <h6 class="fw-bold text-danger mb-3"><i class="fas fa-filter me-2"></i>FILTER BY TYPE</h6>
-          <div class="d-flex flex-wrap gap-2">
-            <button class="btn btn-outline-danger btn-sm px-4 py-2 fw-bold type-filter active" data-type="all">ALL</button>
-            <button class="btn btn-outline-danger btn-sm px-4 py-2 fw-bold type-filter" data-type="human">HUMAN</button>
-            <button class="btn btn-outline-danger btn-sm px-4 py-2 fw-bold type-filter" data-type="demon">DEMON</button>
-            <button class="btn btn-outline-warning btn-sm px-4 py-2 fw-bold type-filter" data-type="hashira">HASHIRA</button>
-          </div>
+      <div class="search-container p-0">
+        <div class="d-flex">
+          <input type="text" id="searchInput" class="search-input flex-grow-1" placeholder="🔍 Search Characters..."
+            onkeyup="searchCharacters()">
+          <button class="search-btn" onclick="searchCharacters()">
+            <i class="fas fa-search"></i>
+          </button>
         </div>
       </div>
 
-      <div class="col-lg-9 col-md-8 col-12 main-content">
-        <div class="row g-4" id="characterGrid"></div>
+      <div class="mt-4 p-4 bg-dark bg-opacity-60 rounded-3 border border-secondary">
+        <h6 class="fw-bold text-danger mb-3"><i class="fas fa-filter me-2"></i>FILTER BY TYPE</h6>
+        <div class="d-flex flex-wrap gap-2">
+          <button class="btn btn-outline-danger btn-sm px-4 py-2 fw-bold type-filter active"
+            data-type="all">ALL</button>
+          <button class="btn btn-outline-danger btn-sm px-4 py-2 fw-bold type-filter" data-type="human">HUMAN</button>
+          <button class="btn btn-outline-danger btn-sm px-4 py-2 fw-bold type-filter" data-type="demon">DEMON</button>
+          <button class="btn btn-outline-warning btn-sm px-4 py-2 fw-bold type-filter"
+            data-type="hashira">HASHIRA</button>
+        </div>
       </div>
+    </div>
 
-      <div class="modal fade" id="characterModal" tabindex="-1">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header border-0 pb-0">
-              <h5 class="modal-title mb-0" id="modalName"></h5>
-              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body p-5">
-              <div class="row">
-                <div class="col-lg-4 text-center mb-4 mb-lg-0">
-                  <img id="modalImage" class="img-fluid rounded-4 shadow-lg"
-                    style="max-height: 450px; object-fit: contain;" alt="Character">
-                  <div id="modalType" class="type mt-4 d-inline-block px-5 py-3 rounded-pill fw-bold fs-5"></div>
-                </div>
-                <div class="col-lg-8">
-                  <div class="row mb-5">
-                    <div class="col-md-6">
-                      <h6 class="fw-bold text-danger fs-5"><i class="fas fa-sword me-2"></i>ROLE</h6>
-                      <p class="fs-4 mb-0 fw-bold" id="modalRole"></p>
-                    </div>
-                    <div class="col-md-6">
-                      <h6 class="fw-bold text-primary fs-5"><i class="fas fa-lungs me-2"></i>BREATHING</h6>
-                      <p class="fs-4 mb-0 fw-bold" id="modalBreathing">-</p>
-                    </div>
+    <div class="col-lg-9 col-md-8 col-12 main-content">
+      <div class="row g-4" id="characterGrid"></div>
+    </div>
+
+    <div class="modal fade" id="characterModal" tabindex="-1">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header border-0 pb-0">
+            <h5 class="modal-title mb-0" id="modalName"></h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body p-5">
+            <div class="row">
+              <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                <img id="modalImage" class="img-fluid rounded-4 shadow-lg"
+                  style="max-height: 450px; object-fit: contain;" alt="Character">
+                <div id="modalType" class="type mt-4 d-inline-block px-5 py-3 rounded-pill fw-bold fs-5"></div>
+              </div>
+              <div class="col-lg-8">
+                <div class="row mb-5">
+                  <div class="col-md-6">
+                    <h6 class="fw-bold text-danger fs-5"><i class="fas fa-sword me-2"></i>ROLE</h6>
+                    <p class="fs-4 mb-0 fw-bold" id="modalRole"></p>
                   </div>
-
-                  <h5 class="fw-bold text-danger mb-5 border-bottom pb-3 border-3 border-danger"><i
-                      class="fas fa-chart-bar me-2"></i>COMBAT STATS</h5>
-                  <div class="row mb-5 g-4">
-                    <div class="col-md-6">
-                      <div class="fs-5 fw-bold mb-2">Strength</div>
-                      <div class="stats-bar mb-2">
-                        <div class="stats-fill" id="strengthBar" style="width:0%"></div>
-                      </div>
-                      <span id="strengthValue" class="fs-5 fw-bold">0</span>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="fs-5 fw-bold mb-2">Speed</div>
-                      <div class="stats-bar mb-2">
-                        <div class="stats-fill" id="speedBar" style="width:0%"></div>
-                      </div>
-                      <span id="speedValue" class="fs-5 fw-bold">0</span>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="fs-5 fw-bold mb-2">Endurance</div>
-                      <div class="stats-bar mb-2">
-                        <div class="stats-fill" id="enduranceBar" style="width:0%"></div>
-                      </div>
-                      <span id="enduranceValue" class="fs-5 fw-bold">0</span>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="fs-5 fw-bold mb-2">Power</div>
-                      <div class="stats-bar mb-2">
-                        <div class="stats-fill" id="powerBar" style="width:0%"></div>
-                      </div>
-                      <span id="powerValue" class="fs-5 fw-bold">0</span>
-                    </div>
+                  <div class="col-md-6">
+                    <h6 class="fw-bold text-primary fs-5"><i class="fas fa-lungs me-2"></i>BREATHING</h6>
+                    <p class="fs-4 mb-0 fw-bold" id="modalBreathing">-</p>
                   </div>
-
-                  <h5 class="fw-bold text-warning mb-4 border-bottom pb-3 border-3 border-warning"><i
-                      class="fas fa-magic me-2"></i>ABILITIES</h5>
-                  <div id="modalAbilities" class="mb-5"></div>
-
-                  <h5 class="fw-bold text-info mb-4 fs-4"><i class="fas fa-quote-left me-2"></i>BATTLE CRY</h5>
-                  <blockquote class="border-start border-danger border-5 ps-5 py-4 bg-dark bg-opacity-25 rounded-4"
-                    id="modalQuote" style="font-size:1.3rem; font-style:italic;">
-                    "Prepare to be SLAYED!"
-                  </blockquote>
                 </div>
+
+                <h5 class="fw-bold text-danger mb-5 border-bottom pb-3 border-3 border-danger"><i
+                    class="fas fa-chart-bar me-2"></i>COMBAT STATS</h5>
+                <div class="row mb-5 g-4">
+                  <div class="col-md-6">
+                    <div class="fs-5 fw-bold mb-2">Strength</div>
+                    <div class="stats-bar mb-2">
+                      <div class="stats-fill" id="strengthBar" style="width:0%"></div>
+                    </div>
+                    <span id="strengthValue" class="fs-5 fw-bold">0</span>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="fs-5 fw-bold mb-2">Speed</div>
+                    <div class="stats-bar mb-2">
+                      <div class="stats-fill" id="speedBar" style="width:0%"></div>
+                    </div>
+                    <span id="speedValue" class="fs-5 fw-bold">0</span>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="fs-5 fw-bold mb-2">Endurance</div>
+                    <div class="stats-bar mb-2">
+                      <div class="stats-fill" id="enduranceBar" style="width:0%"></div>
+                    </div>
+                    <span id="enduranceValue" class="fs-5 fw-bold">0</span>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="fs-5 fw-bold mb-2">Power</div>
+                    <div class="stats-bar mb-2">
+                      <div class="stats-fill" id="powerBar" style="width:0%"></div>
+                    </div>
+                    <span id="powerValue" class="fs-5 fw-bold">0</span>
+                  </div>
+                </div>
+
+                <h5 class="fw-bold text-warning mb-4 border-bottom pb-3 border-3 border-warning"><i
+                    class="fas fa-magic me-2"></i>ABILITIES</h5>
+                <div id="modalAbilities" class="mb-5"></div>
+
+                <h5 class="fw-bold text-info mb-4 fs-4"><i class="fas fa-quote-left me-2"></i>BATTLE CRY</h5>
+                <blockquote class="border-start border-danger border-5 ps-5 py-4 bg-dark bg-opacity-25 rounded-4"
+                  id="modalQuote" style="font-size:1.3rem; font-style:italic;">
+                  "Prepare to be SLAYED!"
+                </blockquote>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -705,6 +804,336 @@
           "stats": { "strength": 95, "speed": 90, "endurance": 92, "power": 90 },
           "abilities": ["Beast Breathing Forms", "Spatial Awareness", "Flexible Body"],
           "quote": "Everything that dies returns to the earth, but crying won´t bring any of them back, so no matter how frusturated you feel, don´t cry!"
+        },
+        {
+          "id": 11,
+          "name": "Aoi Kanzaki",
+          "role": "Butterfly Mansion Helper",
+          "type": "human",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/11.webp",
+          "breathing": "Water Breathing",
+          "stats": { "strength": 65, "speed": 75, "endurance": 85, "power": 70 },
+          "abilities": ["Medical Training", "Poison Resistance", "Water Breathing Forms", "Nursing Skills"],
+          "quote": "Compared to you guys, I´m not so important, so thanks aren´t necessary. I survived selection due to pure luck. Since then I´ve been afraid to fight, so I´m a coward."
+        },
+        {
+          "id": 12,
+          "name": "Kanao Tsuyuri",
+          "role": "Tsuguko of Insect Hashira / Demon Slayer",
+          "type": "human",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/12.webp",
+          "breathing": "Flower Breathing",
+          "stats": { "strength": 88, "speed": 95, "endurance": 90, "power": 92 },
+          "abilities": ["Flower Breathing Forms", "Enhanced Reflexes", "Coin Decision Making", "Insect Breathing (later)"],
+          "quote": "Somehow I feel the people I care for and those important to me will still be alive tomorrow. But that´s just my hope and there´s no way I can promise that with any certainty."
+        },
+        {
+          "id": 13,
+          "name": "Swamp Demon",
+          "role": "Two-Headed Demon (Asakusa Arc)",
+          "type": "demon",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/13.webp",
+          "breathing": "Blood Demon Art",
+          "stats": { "strength": 82, "speed": 88, "endurance": 90, "power": 85 },
+          "abilities": ["Swamp Manipulation", "Teleportation", "Regeneration", "Dual Consciousness"],
+          "quote": "Don´t interfere! You´ll ruin the girl´s freshness! She gets less and less tasty with each moment that passes!"
+        },
+        {
+          "id": 14,
+          "name": "Muzan Kibutsuji",
+          "role": "Demon King / Progenitor",
+          "type": "demon",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/14.webp",
+          "breathing": "None",
+          "stats": { "strength": 100, "speed": 100, "endurance": 100, "power": 100 },
+          "abilities": ["Blood Demon Art: Biokinesis", "Shapeshifting", "Instant Regeneration", "Demon Creation", "Whip Attacks"],
+          "quote": "The one thing I hate is \"change\". Changes in circumstances. Changes in body. Changes in emotion. In most cases, every change is \"degradation\". It is decline. The one thing I like is \"permanence\". If something doesn´t change for an eternity. It´s in a perfect state."
+        },
+        {
+          "id": 15,
+          "name": "Tamayo",
+          "role": "Demon Doctor / Ally",
+          "type": "demon",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/15.webp",
+          "breathing": "Blood Demon Art",
+          "stats": { "strength": 70, "speed": 75, "endurance": 85, "power": 88 },
+          "abilities": ["Blood Demon Art: Illusions", "Medical Expertise", "Blood Manipulation", "Anti-Demon Drugs"],
+          "quote": "I don´t need to be stronger than you to kill you. I can just make you weaker. Just as you´ll do whatever it takes to stay alive, I... No, we, will do whatever it takes to kill you"
+        },
+        {
+          "id": 16,
+          "name": "Yushiro",
+          "role": "Tamayo's Assistant / Demon",
+          "type": "demon",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/16.webp",
+          "breathing": "Blood Demon Art",
+          "stats": { "strength": 78, "speed": 85, "endurance": 82, "power": 80 },
+          "abilities": ["Blood Demon Art: Blindfolding", "Invisibility", "Enhanced Stealth", "Medical Assistance"],
+          "quote": "Someone who never gives to others will someday become unable to receive anything from them."
+        },
+        {
+          "id": 17,
+          "name": "Susamaru",
+          "role": "Lower Moon Demon 6 (Former)",
+          "type": "demon",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/17.webp",
+          "breathing": "Blood Demon Art",
+          "stats": { "strength": 88, "speed": 92, "endurance": 85, "power": 90 },
+          "abilities": ["Blood Demon Art: Temari Balls", "Homing Attacks", "Regeneration", "Multi-Temari Control"],
+          "quote": "Let´s keep playing until dawn! Until your life ends"
+        },
+        {
+          "id": 18,
+          "name": "Yahaba",
+          "role": "Lower Moon Demon 6 (Former)",
+          "type": "demon",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/18.webp",
+          "breathing": "Blood Demon Art",
+          "stats": { "strength": 75, "speed": 95, "endurance": 80, "power": 88 },
+          "abilities": ["Blood Demon Art: Arrows", "Vector Manipulation", "Flight", "Force Manipulation"],
+          "quote": "How will we kill them? Brutally of course!"
+        },
+        {
+          "id": 19,
+          "name": "Kyogai",
+          "role": "Lower Moon Demon 6 (Former)",
+          "type": "demon",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/19.webp",
+          "breathing": "Blood Demon Art",
+          "stats": { "strength": 90, "speed": 70, "endurance": 92, "power": 87 },
+          "abilities": ["Blood Demon Art: Drum House", "Spatial Manipulation", "Tsuzumi Drum Control", "Regeneration"],
+          "quote": "Demons... Exist for a purpose."
+        },
+        {
+          "id": 20,
+          "name": "Shinobu Kocho",
+          "role": "Insect Hashira",
+          "type": "hashira",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/20.webp",
+          "breathing": "Insect Breathing",
+          "stats": { "strength": 70, "speed": 97, "endurance": 88, "power": 95 },
+          "abilities": ["Insect Breathing Forms", "Wisteria Poison Mastery", "Medical Expertise", "Stinger Niche"],
+          "quote": "I once believed that the road of happiness continued forever and ever into the distance. When it was destroyed, I realized for the first time that it lies upon a thin sheet of glass."
+        },
+        {
+          "id": 21,
+          "name": "Murata",
+          "role": "Demon Slayer",
+          "type": "human",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/21.webp",
+          "breathing": "Unknown",
+          "stats": { "strength": 72, "speed": 78, "endurance": 80, "power": 75 },
+          "abilities": ["Swordsmanship", "Final Selection Survivor", "Team Combat"],
+          "quote": "Tomioka remembered my name... We were together since the Final Selection too...! I know there´s a huge difference between us but we were in the same batch, man...!"
+        },
+        {
+          "id": 22,
+          "name": "Spider Son",
+          "role": "Spider Demon Family Member",
+          "type": "demon",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/22.webp",
+          "breathing": "Blood Demon Art",
+          "stats": { "strength": 75, "speed": 85, "endurance": 78, "power": 72 },
+          "abilities": ["Web Manipulation", "Poison Fangs", "Wall-Crawling", "Regeneration"],
+          "quote": "There´s nothing to be afraid of. When the poison runs throughout your system and you become a spider, your mind will be gone."
+        },
+        {
+          "id": 23,
+          "name": "Spider Daughter",
+          "role": "Spider Demon Family Member",
+          "type": "demon",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/23.webp",
+          "breathing": "Blood Demon Art",
+          "stats": { "strength": 68, "speed": 92, "endurance": 70, "power": 75 },
+          "abilities": ["Steel Web Threads", "High-Speed Movement", "Regeneration", "Thread Control"],
+          "quote": "I only ever worried about myself. They were dumb, but I was different. But now I´ve messed up!"
+        },
+        {
+          "id": 24,
+          "name": "Spider Mother",
+          "role": "Spider Demon Family Member",
+          "type": "demon",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/24.webp",
+          "breathing": "Blood Demon Art",
+          "stats": { "strength": 82, "speed": 78, "endurance": 88, "power": 80 },
+          "abilities": ["Blood Demon Art: Cell Manipulation", "Flesh Reconstruction", "Regeneration", "Poison Claws"],
+          "quote": "Arrgh! Die! Die! Die now! If you don´t, I´ll suffer an awful fate!"
+        },
+        {
+          "id": 25,
+          "name": "Spider Father",
+          "role": "Spider Demon Family Leader",
+          "type": "demon",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/25.webp",
+          "breathing": "Blood Demon Art",
+          "stats": { "strength": 95, "speed": 65, "endurance": 98, "power": 92 },
+          "abilities": ["Blood Demon Art: Irritant Scales", "Massive Size", "Enhanced Durability", "Regeneration"],
+          "quote": "Stay away... from... my... family!"
+        },
+        {
+          "id": 26,
+          "name": "Rui",
+          "role": "Lower Moon Demon 5",
+          "type": "demon",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/26.webp",
+          "breathing": "Blood Demon Art",
+          "stats": { "strength": 92, "speed": 94, "endurance": 90, "power": 96 },
+          "abilities": ["Blood Demon Art: Threads", "Web Manipulation", "Demon Fusion", "Ultra-Fast Regeneration"],
+          "quote": "Since I was the one with the most power, there was no one who could protect me... who could shield me. The more powerful I became, the less I remembered about being a human."
+        },
+        {
+          "id": 27,
+          "name": "Kagaya Ubuyashiki",
+          "role": "Demon Slayer Corps Leader",
+          "type": "human",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/27.webp",
+          "breathing": "None",
+          "stats": { "strength": 10, "speed": 15, "endurance": 100, "power": 95 },
+          "abilities": ["Leadership", "Demon Detection", "Strategic Genius", "Charisma"],
+          "quote": "I know what eternity is. Eternity is human feeling. Only human feelings last forever and are undying."
+        },
+        {
+          "id": 28,
+          "name": "Tengen Uzui",
+          "role": "Sound Hashira",
+          "type": "hashira",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/28.webp",
+          "breathing": "Sound Breathing",
+          "stats": { "strength": 98, "speed": 97, "endurance": 95, "power": 98 },
+          "abilities": ["Sound Breathing Forms", "Dual Nichirin Cleavers", "Enhanced Hearing", "Explosive Attacks"],
+          "quote": "I am a god! You three are trash! That´s the first thing you need to pound into your heads! Drive it in! You´re to turn into dogs if I tell you to! Turn into monkeys if I say so! And let me repeat! I am a god!"
+        },
+        {
+          "id": 29,
+          "name": "Mitsuri Kanroji",
+          "role": "Love Hashira",
+          "type": "hashira",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/29.webp",
+          "breathing": "Love Breathing",
+          "stats": { "strength": 99, "speed": 95, "endurance": 97, "power": 94 },
+          "abilities": ["Love Breathing Forms", "Flexible Body", "Superhuman Strength", "Whip-Like Blade"],
+          "quote": "\tIs it okay for a girl to be this strong? I still worry that someone may ask that, as though I´m not human. In my fear, I was suppressing my strength. But not anymore. Leave this to me. I will protect everyone."
+        },
+        {
+          "id": 30,
+          "name": "Kyojuro Rengoku",
+          "role": "Flame Hashira",
+          "type": "hashira",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/30.webp",
+          "breathing": "Flame Breathing",
+          "stats": { "strength": 97, "speed": 96, "endurance": 100, "power": 99 },
+          "abilities": ["Flame Breathing Forms", "Ninth Form (Rengoku)", "Unwavering Spirit", "Enhanced Vision"],
+          "quote": "Life is a series of decisions. You never have unlimited options or unlimited time to think, but what you choose in that instant defines who you are."
+        },
+        {
+          "id": 31,
+          "name": "Muichiro Tokito",
+          "role": "Mist Hashira",
+          "type": "hashira",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/31.webp",
+          "breathing": "Mist Breathing",
+          "stats": { "strength": 92, "speed": 99, "endurance": 88, "power": 97 },
+          "abilities": ["Mist Breathing Forms", "Forgetful Nature", "Genius Reflexes", "Marked Form"],
+          "quote": "Even if I lose my memories, my body will remember that anger that will not leave me until I die. It´s why I trained so hard that I vomited blood to destroy demons. And more... to eradicate them!"
+        },
+        {
+          "id": 32,
+          "name": "Gyomei Himejima",
+          "role": "Stone Hashira",
+          "type": "hashira",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/32.webp",
+          "breathing": "Stone Breathing",
+          "stats": { "strength": 100, "speed": 90, "endurance": 100, "power": 100 },
+          "abilities": ["Stone Breathing Forms", "Stone Head", "Flail & Axe Mastery", "Prayer Beads"],
+          "quote": "We are proud to live and die as human beings. Don´t act like your worthless ideas are supreme and force them on others."
+        },
+        {
+          "id": 33,
+          "name": "Obanai Iguro",
+          "role": "Serpent Hashira",
+          "type": "hashira",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/33.webp",
+          "breathing": "Serpent Breathing",
+          "stats": { "strength": 88, "speed": 98, "endurance": 92, "power": 95 },
+          "abilities": ["Serpent Breathing Forms", "Kaburamaru Snake", "Heterochromia Vision", "Flexible Body"],
+          "quote": "I want to die defeating Muzan, and I pray that it will purify my filthy blood. Then, if I am reborn as a human being in a peaceful world without demons, I will tell you of my feelings for you."
+        },
+        {
+          "id": 34,
+          "name": "Sanemi Shinazugawa",
+          "role": "Wind Hashira",
+          "type": "hashira",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/34.webp",
+          "breathing": "Wind Breathing",
+          "stats": { "strength": 98, "speed": 94, "endurance": 96, "power": 98 },
+          "abilities": ["Wind Breathing Forms", "Blood Lust Intimidation", "Enhanced Scars", "Demon Blood Addiction"],
+          "quote": "I know how unfair the world is... because good people... die one after another."
+        },
+        {
+          "id": 35,
+          "name": "Enmu",
+          "role": "Lower Moon Demon 1",
+          "type": "demon",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/35.webp",
+          "breathing": "Blood Demon Art",
+          "stats": { "strength": 80, "speed": 85, "endurance": 88, "power": 90 },
+          "abilities": ["Blood Demon Art: Dream Manipulation", "Sleep Induction", "Flesh Tentacles", "Mass Hallucinations"],
+          "quote": "All human hearts are the same. So fragile and weak, like glasswork."
+        },
+        {
+          "id": 36,
+          "name": "Akaza",
+          "role": "Upper Moon Demon 3",
+          "type": "demon",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/36.webp",
+          "breathing": "Destructive Death",
+          "stats": { "strength": 99, "speed": 100, "endurance": 98, "power": 99 },
+          "abilities": ["Destructive Death Forms", "Compass Vision", "Shockwave Punches", "Ultra Regeneration"],
+          "quote": "You misunderstand, Tanjiro. I only despise the weak. I only spit on weaklings. Yes. Weaklings make me sick."
+        },
+        {
+          "id": 37,
+          "name": "Daki",
+          "role": "Upper Moon Demon 6 (Upper Half)",
+          "type": "demon",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/37.webp",
+          "breathing": "Blood Demon Art",
+          "stats": { "strength": 85, "speed": 92, "endurance": 80, "power": 88 },
+          "abilities": ["Blood Demon Art: Obi Sashes", "Beauty Manipulation", "Regeneration", "Head Storage"],
+          "quote": "Demons never grow old. And they don´t need money to eat. They don´t get sick. They don´t die. They have nothing to lose. We beautiful, powerful demons... can do anything we want!"
+        },
+        {
+          "id": 38,
+          "name": "Gyutaro",
+          "role": "Upper Moon Demon 6 (Lower Half)",
+          "type": "demon",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/38.webp",
+          "breathing": "Blood Demon Art",
+          "stats": { "strength": 95, "speed": 88, "endurance": 92, "power": 94 },
+          "abilities": ["Blood Demon Art: Blood Sickles", "Flying Blood Blades", "Regeneration", "Poison Blood"],
+          "quote": "The sufferings of my past were lessons on what to do to others as revenge! If I don´t cause misery equal to my own unhappiness, I´ll never balance the scales!"
+        },
+        {
+          "id": 39,
+          "name": "Doma",
+          "role": "Upper Moon Demon 2",
+          "type": "demon",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/39.webp",
+          "breathing": "Blood Demon Art",
+          "stats": { "strength": 98, "speed": 97, "endurance": 99, "power": 99 },
+          "abilities": ["Blood Demon Art: Cryokinesis", "Ice Clones", "Fan Slashes", "Tessenjutsu"],
+          "quote": "You know, everyone´s afraid of dying. And that´s why I eat them all up. Now they get to live together with me. Forever."
+        },
+        {
+          "id": 40,
+          "name": "Hantengu",
+          "role": "Upper Moon Demon 4",
+          "type": "demon",
+          "image": "https://www.demonslayer-api.com/api/v1/characters/images/40.webp",
+          "breathing": "Blood Demon Art",
+          "stats": { "strength": 94, "speed": 96, "endurance": 100, "power": 97 },
+          "abilities": ["Blood Demon Art: Emotion Manifestation", "Multiple Emotion Forms", "Lightning/Wind Attacks", "Tiny Core"],
+          "quote": "You brutal fiends who torment the weak... Atrocious... Offensive... to the extreme. Damn you, awful villains...!"
         }
       ]
     }
@@ -808,4 +1237,5 @@
     });
   </script>
 </body>
+
 </html>
