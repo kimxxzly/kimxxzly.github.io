@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,7 @@
             --dark-gold: #cc8800;
             --blade-glow: #ffaa00;
             --gem-green: #00ff88;
-            --shadow-dark: rgba(0,0,0,0.8);
+            --shadow-dark: rgba(0, 0, 0, 0.8);
         }
 
         * {
@@ -33,18 +34,25 @@
         .bg {
             position: fixed;
             inset: 0;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(255,68,68,0.25) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255,100,100,0.2) 0%, transparent 50%),
-                radial-gradient(circle at 50% 10%, rgba(255,215,0,0.15) 0%, transparent 40%),
-                radial-gradient(circle at 30% 60%, rgba(255,68,68,0.15) 0%, transparent 50%);
+            background:
+                radial-gradient(circle at 20% 80%, rgba(255, 68, 68, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 100, 100, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 10%, rgba(255, 215, 0, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 30% 60%, rgba(255, 68, 68, 0.15) 0%, transparent 50%);
             z-index: -2;
             animation: bgPulse 4s ease-in-out infinite alternate;
         }
 
         @keyframes bgPulse {
-            0% { opacity: 0.5; transform: scale(1); }
-            100% { opacity: 0.8; transform: scale(1.02); }
+            0% {
+                opacity: 0.5;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0.8;
+                transform: scale(1.02);
+            }
         }
 
         .particles {
@@ -69,8 +77,15 @@
                 transform: translateY(100vh) translateX(0) scale(0) rotate(0deg);
                 opacity: 0;
             }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
             100% {
                 transform: translateY(-40vh) translateX(120px) scale(1.4) rotate(360deg);
                 opacity: 0;
@@ -101,9 +116,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: 
-                gradientShift 3s ease infinite, 
-                textGlow 2.5s ease-in-out infinite alternate;
+            animation: gradientShift 3s ease infinite, textGlow 2.5s ease-in-out infinite alternate;
             margin-bottom: 2.5rem;
             line-height: 1;
             font-weight: 900;
@@ -121,22 +134,37 @@
         }
 
         @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
         }
 
         @keyframes textGlow {
-            0% { 
+            0% {
                 filter: drop-shadow(0 0 40px var(--primary-red)) brightness(1);
             }
-            100% { 
+
+            100% {
                 filter: drop-shadow(0 0 80px var(--gold)) brightness(1.15);
             }
         }
 
         @keyframes swordEmojiFloat {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-12px) rotate(180deg); }
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-12px) rotate(180deg);
+            }
         }
 
         .subtitle {
@@ -171,15 +199,8 @@
             height: 100%;
             object-fit: cover;
             border-radius: 25px;
-            box-shadow: 
-                0 40px 100px rgba(255,68,68,0.6),
-                0 20px 60px rgba(0,0,0,0.9),
-                inset 0 0 50px rgba(255,255,255,0.08);
-            filter: 
-                brightness(1.15) 
-                contrast(1.2) 
-                saturate(1.25)
-                drop-shadow(0 30px 80px rgba(255,68,68,0.5));
+            box-shadow: 0 40px 100px rgba(255, 68, 68, 0.6), 0 20px 60px rgba(0, 0, 0, 0.9), inset 0 0 50px rgba(255, 255, 255, 0.08);
+            filter: brightness(1.15) contrast(1.2) saturate(1.25) drop-shadow(0 30px 80px rgba(255, 68, 68, 0.5));
             transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             cursor: pointer;
             position: relative;
@@ -188,31 +209,21 @@
 
         .hero-image:hover {
             transform: scale(1.05) translateY(-10px);
-            filter: 
-                brightness(1.25) 
-                contrast(1.3) 
-                saturate(1.35)
-                drop-shadow(0 50px 120px rgba(255,165,0,0.8));
-            box-shadow: 
-                0 60px 140px rgba(255,68,68,0.9),
-                0 30px 80px rgba(0,0,0,1),
-                inset 0 0 60px rgba(255,255,255,0.12);
+            filter: brightness(1.25) contrast(1.3) saturate(1.35) drop-shadow(0 50px 120px rgba(255, 165, 0, 0.8));
+            box-shadow: 0 60px 140px rgba(255, 68, 68, 0.9), 0 30px 80px rgba(0, 0, 0, 1), inset 0 0 60px rgba(255, 255, 255, 0.12);
         }
 
         .image-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, 
-                rgba(255,68,68,0.35) 0%, 
-                rgba(255,215,0,0.25) 50%, 
-                transparent 100%);
+            background: linear-gradient(135deg, rgba(255, 68, 68, 0.35) 0%, rgba(255, 215, 0, 0.25) 50%, transparent 100%);
             border-radius: 25px;
             opacity: 0;
             transition: opacity 0.4s ease;
             pointer-events: none;
         }
 
-        .hero-image:hover + .image-overlay,
+        .hero-image:hover+.image-overlay,
         .photo-container:hover .image-overlay {
             opacity: 1;
         }
@@ -228,9 +239,7 @@
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             text-transform: uppercase;
             font-weight: 800;
-            box-shadow: 
-                0 15px 50px rgba(255, 68, 68, 0.6),
-                inset 0 1px 0 rgba(255,255,255,0.25);
+            box-shadow: 0 15px 50px rgba(255, 68, 68, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.25);
             position: relative;
             overflow: hidden;
             text-decoration: none;
@@ -248,7 +257,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
             transition: left 0.7s;
         }
 
@@ -258,17 +267,171 @@
 
         .btn-primary:hover {
             transform: translateY(-6px) scale(1.08);
-            box-shadow: 
-                0 25px 60px rgba(255, 68, 68, 0.8),
-                inset 0 1px 0 rgba(255,255,255,0.4);
+            box-shadow: 0 25px 60px rgba(255, 68, 68, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+
+        /* NEW INFO SECTION */
+        .info-section {
+            padding: 8rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            background: linear-gradient(45deg, var(--primary-red), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-bottom: 4rem;
+            font-weight: 900;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-red), var(--gold));
+            border-radius: 2px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .stat-card {
+            background: rgba(15, 15, 15, 0.9);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 68, 68, 0.3);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 68, 68, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .stat-card:hover::before {
+            left: 100%;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: var(--primary-red);
+            box-shadow: 0 30px 80px rgba(255, 68, 68, 0.4);
+        }
+
+        .stat-icon {
+            font-size: 3.5rem;
+            background: linear-gradient(45deg, var(--primary-red), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, var(--gold), var(--blade-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: rgba(20, 20, 20, 0.85);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 15px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--gem-green);
+            margin-bottom: 1.5rem;
         }
 
         footer {
-            background: linear-gradient(180deg, rgba(10,10,10,0.95), #000);
+            background: linear-gradient(180deg, rgba(10, 10, 10, 0.95), #000);
             padding: 5rem 2rem 3rem;
             text-align: center;
             border-top: 4px solid var(--primary-red);
             position: relative;
+        }
+
+        .footer-content h4 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, var(--primary-red), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .social-link {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, var(--primary-red), #cc0000);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 15px 40px rgba(255, 68, 68, 0.6);
         }
 
         @media (max-width: 992px) {
@@ -278,15 +441,20 @@
                 padding: 3rem 2rem;
                 gap: 4rem;
             }
-            
+
             .text-content {
                 max-width: 100%;
             }
-            
+
             .photo-container {
                 height: 50vh;
                 min-width: 300px;
                 max-width: 400px;
+            }
+
+            .stats-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -294,19 +462,26 @@
             .hero {
                 padding: 2rem 1.5rem;
             }
-            
+
             .cta-section {
                 width: 100%;
                 align-items: stretch;
             }
-            
+
             .btn-primary {
                 width: 100%;
+            }
+
+            .info-section {
+                padding: 4rem 1.5rem 2rem;
             }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
+
+            *,
+            *::before,
+            *::after {
                 animation-duration: 0.01ms !important;
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
@@ -325,43 +500,97 @@
         }
     </style>
 </head>
+
 <body>
     <div class="bg"></div>
     <div class="particles" id="particles"></div>
 
     <section class="hero fade-in">
         <div class="text-content">
-            <div class = h1>Kimetsu no Yaiba</div>
+            <h1>Kimetsu no Yaiba</h1>
             <p class="subtitle">
-                Wield the Nichirin Blade. Master Breathing. 
+                Wield the Nichirin Blade. Master Breathing.
                 Protect humanity from the eternal night.
             </p>
             <div class="cta-section">
                 <a href="index.html" class="btn-primary">
                     <i class="fas fa-play"></i>
-                    Get Started
+                    Explore Corps
                 </a>
             </div>
         </div>
 
         <div class="photo-container">
-
-            <img 
-                src="https://i.pinimg.com/736x/35/64/ec/3564ec632274be1cb97fdde5e3a02f21.jpg" 
-                alt="Demon Slayer Corps - Tanjiro training with Nichirin Blade"
-                class="hero-image" 
-                loading="eager"
-            />
+            <img src="https://i.pinimg.com/736x/35/64/ec/3564ec632274be1cb97fdde5e3a02f21.jpg"
+                alt="Demon Slayer Corps - Tanjiro training with Nichirin Blade" class="hero-image" loading="eager" />
             <div class="image-overlay"></div>
         </div>
     </section>
 
+    <section class="info-section fade-in">
+        <h2 class="section-title">Demon Slayer Corps</h2>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <i class="fas fa-sword stat-icon"></i>
+                <span class="stat-number">9</span>
+                <h3>Hashira</h3>
+                <p>Pillar Masters of Breathing Techniques</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-demon stat-icon"></i>
+                <span class="stat-number">12</span>
+                <h3>Upper Moons</h3>
+                <p>Elite Demon Warriors</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-lungs stat-icon"></i>
+                <span class="stat-number">14</span>
+                <h3>Breathing Styles</h3>
+                <p>Unique Combat Forms</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-users stat-icon"></i>
+                <span class="stat-number">200+</span>
+                <h3>Slayers</h3>
+                <p>Active Demon Slayers</p>
+            </div>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-search feature-icon"></i>
+                <h4>Character Database</h4>
+                <p>Complete profiles of Hashira, Slayers, and Demons with stats, abilities, and quotes</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-filter feature-icon"></i>
+                <h4>Advanced Filters</h4>
+                <p>Search by ID, name, type (Human/Demon/Hashira), role, and breathing style</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-chart-bar feature-icon"></i>
+                <h4>Combat Stats</h4>
+                <p>Strength, Speed, Endurance, and Power ratings for every character</p>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="container">
             <div class="footer-content">
-                <h4><i class="fas fa-sword"></i><i>DEMON SLAYER CORPS</i></h4>
-
+                <Display-md><i class="fas fa-sword"></i> DEMON SLAYER CORPS</Display-md>
+                <p style="margin-bottom: 2rem; opacity: 0.8;">
+                    Set your heart ablaze. Slay the night.
+                </p>
+                <div class="social-links">
+                    <a href="#" class="social-link" title="Discord"><i class="fab fa-discord"></i></a>
+                    <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-link" title="Reddit"><i class="fab fa-reddit"></i></a>
+                </div>
+                <p style="opacity: 0.6; font-size: 0.9rem;">
+                    © 2024 Demon Slayer Corps Database. All rights reserved.
                 </p>
             </div>
         </div>
@@ -388,7 +617,7 @@
                 particle.style.left = Math.random() * 100 + '%';
                 particle.style.animationDuration = (10 + Math.random() * 8) + 's';
                 particle.style.animationDelay = Math.random() * 3 + 's';
-                
+
                 this.container.appendChild(particle);
                 this.particles.push(particle);
 
@@ -410,6 +639,7 @@
         }, { threshold: 0.1 });
 
         observer.observe(document.querySelector('.hero'));
+        observer.observe(document.querySelector('.info-section'));
 
         const heroImage = document.querySelector('.hero-image');
         heroImage.addEventListener('click', () => {
@@ -423,11 +653,11 @@
             btn.addEventListener('mouseenter', () => {
                 btn.style.transform = 'translateY(-2px) scale(1.02)';
             });
-            
             btn.addEventListener('mouseleave', () => {
                 btn.style.transform = '';
             });
         });
     </script>
 </body>
+
 </html>

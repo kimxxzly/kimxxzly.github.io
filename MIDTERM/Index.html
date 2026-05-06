@@ -588,8 +588,8 @@
 
       <div class="search-container p-0">
         <div class="d-flex">
-          <input type="text" id="searchInput" class="search-input flex-grow-1" placeholder="🔍 Search Characters..."
-            onkeyup="searchCharacters()">
+          <input type="text" id="searchInput" class="search-input flex-grow-1"
+            placeholder="🔍 Search by Name, ID, Role, Type..." onkeyup="searchCharacters()">
           <button class="search-btn" onclick="searchCharacters()">
             <i class="fas fa-search"></i>
           </button>
@@ -1174,7 +1174,9 @@
       let filtered = demonSlayerData.characters.filter(char =>
         char.name.toLowerCase().includes(query) ||
         char.role.toLowerCase().includes(query) ||
-        char.breathing.toLowerCase().includes(query)
+        char.breathing.toLowerCase().includes(query) ||
+        String(char.id).includes(query) ||  // ← ADD MO LANG 'TO
+        char.type.toLowerCase().includes(query)  // ← OPTIONAL: para ma-search din yung type
       );
 
       if (currentFilter !== 'all') {
