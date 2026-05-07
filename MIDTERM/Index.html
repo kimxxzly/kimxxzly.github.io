@@ -582,14 +582,14 @@
 
   <div class="row">
     <div class="col-lg-3 col-md-4 col-12 sidebar">
-      <a href="HOMPAGE.html" class="home-link">
+      <a href="homepage.html" class="home-link">
         <i class="fas fa-home me-2"></i>Back to Home
       </a>
 
       <div class="search-container p-0">
         <div class="d-flex">
           <input type="text" id="searchInput" class="search-input flex-grow-1"
-            placeholder="🔍 Search by Name, ID, Role, Type..." onkeyup="searchCharacters()">
+            placeholder="Search by Name, ID, Role, Type..." onkeyup="searchCharacters()">
           <button class="search-btn" onclick="searchCharacters()">
             <i class="fas fa-search"></i>
           </button>
@@ -1175,8 +1175,8 @@
         char.name.toLowerCase().includes(query) ||
         char.role.toLowerCase().includes(query) ||
         char.breathing.toLowerCase().includes(query) ||
-        String(char.id).includes(query) ||  // ← ADD MO LANG 'TO
-        char.type.toLowerCase().includes(query)  // ← OPTIONAL: para ma-search din yung type
+        String(char.id).includes(query) ||  
+        char.type.toLowerCase().includes(query) 
       );
 
       if (currentFilter !== 'all') {
