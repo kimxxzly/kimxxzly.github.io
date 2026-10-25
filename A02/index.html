@@ -1,246 +1,972 @@
+ 
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ACER</title>
-
+  <meta name="theme-color" content="#101411">
+  <title>ACER | Explore What's Next</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #101411;
+      --surface: #181e1a;
+      --surface-light: #202822;
+      --green: #83c900;
+      --green-bright: #a4f000;
+      --text: #f5f7f4;
+      --muted: #a5afa7;
+      --border: rgba(255,255,255,.1);
+      --container: 1180px;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
     }
 
     body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
- 
-    .navbar {
-      background: #222;
-      color: #fff;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
     }
 
     .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 0 20px;
+      width: min(var(--container), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .navbar {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 1000;
+      background: rgba(16,20,17,.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
     }
 
     .nav-content {
+      min-height: 76px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 15px 0;
+      justify-content: space-between;
+      gap: 24px;
     }
 
     .logo {
-      font-weight: bold;
-      font-size: 20px;
+      font-family: "Manrope", sans-serif;
+      font-size: 29px;
+      font-weight: 800;
+      letter-spacing: -2px;
+      color: var(--green-bright);
     }
 
+    .logo span {
+      color: white;
+    }
 
     .nav-links {
       display: flex;
-      gap: 20px;
+      align-items: center;
+      gap: 34px;
     }
 
     .nav-links a {
-      color: #fff;
-      text-decoration: none;
+      font-size: 13px;
+      color: #d1d7d2;
+      transition: color .25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--green-bright);
+    }
+
+    .nav-cta {
+      padding: 10px 18px;
+      border: 1px solid var(--green);
+      border-radius: 5px;
+      color: var(--green-bright) !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--green);
+      color: #101411 !important;
     }
 
     .menu-toggle {
       display: none;
-      font-size: 24px;
+      color: white;
+      background: transparent;
+      border: 0;
+      font-size: 28px;
       cursor: pointer;
     }
 
-
-    @media (max-width: 768px) {
-      .nav-content {
-        padding: 15px 10px;
-      }
-
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        gap: 15px;
-        background: #222;
-        position: absolute;
-        top: 60px;
-        right: 10px;
-        left: 10px;
-        padding: 15px;
-        border-radius: 8px;
-      }
-
-      .nav-links a {
-        padding: 8px 0;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
+    .hero {
+      position: relative;
+      min-height: 760px;
+      padding: 150px 0 100px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 75% 45%, rgba(102,170,0,.18), transparent 42%),
+        linear-gradient(120deg, #101411 35%, #182219 100%);
     }
 
-    .hero {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 440px;
+      height: 440px;
+      border: 1px solid rgba(164,240,0,.1);
+      border-radius: 50%;
+      right: 4%;
+      top: 17%;
+      box-shadow: 0 0 0 45px rgba(164,240,0,.025), 0 0 0 90px rgba(164,240,0,.02);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
       align-items: center;
-      text-align: center;
-      color: #fff;
-      background: linear-gradient(135deg, #404243, #3b484e);
-      padding: 20px;
-      margin-top: 60px;
+      gap: 25px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 23px;
+      color: var(--green-bright);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      background: var(--green);
+    }
+
+    h1, h2, h3 {
+      font-family: "Manrope", sans-serif;
+      line-height: 1.12;
     }
 
     .hero h1 {
-      font-size: 60px;
+      max-width: 600px;
+      font-size: clamp(48px, 6vw, 78px);
+      letter-spacing: -4px;
+      font-weight: 800;
     }
 
-    .hero p {
-      margin: 15px 0;
-      font-size: 18px;
+    .hero h1 span {
+      color: var(--green-bright);
+    }
+
+    .hero-copy {
+      max-width: 480px;
+      margin: 25px 0 32px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
     }
 
     .btn {
-      display: inline-block;
-      padding: 12px 25px;
-      background: red;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      min-height: 49px;
+      padding: 13px 23px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: transform .25s ease, background .25s ease, border-color .25s ease;
     }
 
-    .features {
-      padding: 60px 20px;
-      background: #f4f4f4;
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      color: #11170c;
+      background: var(--green-bright);
+    }
+
+    .btn-primary:hover {
+      background: #c0ff48;
+    }
+
+    .btn-outline {
+      border-color: rgba(255,255,255,.24);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--green);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-width: 0;
+    }
+
+    .hero-visual img {
+      width: 100%;
+      max-height: 490px;
+      object-fit: contain;
+      filter: drop-shadow(0 28px 38px rgba(0,0,0,.45));
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .visual-label {
+      position: absolute;
+      right: 0;
+      bottom: 25px;
+      padding: 15px 19px;
+      background: rgba(24,30,26,.88);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      backdrop-filter: blur(12px);
+    }
+
+    .visual-label small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .visual-label strong {
+      color: var(--green-bright);
+      font-family: "Manrope", sans-serif;
+      font-size: 18px;
+    }
+
+    .stats {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: #131914;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .stat {
+      padding: 29px 20px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat:last-child {
+      border-right: 0;
+    }
+
+    .stat strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 20px;
+      color: var(--green-bright);
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    section.content-section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      max-width: 680px;
+      margin: 0 auto 48px;
       text-align: center;
     }
 
-    .features h2 {
-      margin-bottom: 40px;
-    }
-
-    .cards {
-      display: flex;
-      gap: 20px;
+    .section-heading .eyebrow {
       justify-content: center;
-      flex-wrap: wrap;
     }
 
-    .card {
-      background: #fff;
-      padding: 20px;
-      width: 300px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
+    .section-heading h2 {
+      margin-bottom: 16px;
+      font-size: clamp(32px, 4vw, 46px);
+      letter-spacing: -1.8px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .products {
+      background: #141a15;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .product-card {
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      transition: transform .3s ease, border-color .3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(164,240,0,.55);
+    }
+
+    .product-image {
+      height: 245px;
+      padding: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(140deg, #263229, #151a16);
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform .35s ease;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.06);
+    }
+
+    .product-info {
+      padding: 25px;
+    }
+
+    .product-tag {
+      display: inline-block;
+      margin-bottom: 13px;
+      color: var(--green-bright);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+    }
+
+    .product-info h3 {
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .product-info p {
+      min-height: 48px;
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--green-bright);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .text-link span {
+      transition: transform .2s ease;
+    }
+
+    .text-link:hover span {
+      transform: translateX(5px);
+    }
+
+    .experience {
+      background:
+        radial-gradient(ellipse at 15% 50%, rgba(131,201,0,.12), transparent 35%),
+        var(--bg);
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .experience-image {
+      min-height: 360px;
+      overflow: hidden;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #1c251e;
+    }
+
+    .experience-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      object-fit: cover;
+    }
+
+    .experience-copy h2 {
+      margin-bottom: 20px;
+      font-size: clamp(32px, 4vw, 45px);
+      letter-spacing: -1.8px;
+    }
+
+    .experience-copy > p {
+      margin-bottom: 28px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .benefit-list {
+      display: grid;
+      gap: 18px;
+      margin-bottom: 30px;
+    }
+
+    .benefit {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .benefit-icon {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 5px;
+      color: var(--green-bright);
+      background: rgba(131,201,0,.12);
+      font-size: 16px;
+    }
+
+    .benefit strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 14px;
+    }
+
+    .benefit p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .showcase-banner {
+      padding: 65px 0;
+      background: var(--green);
+      color: #11170c;
+    }
+
+    .banner-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .banner-content h2 {
+      max-width: 680px;
+      font-size: clamp(28px, 4vw, 43px);
+      letter-spacing: -1.5px;
+    }
+
+    .banner-content p {
+      margin-top: 10px;
+      font-size: 14px;
+      opacity: .8;
+    }
+
+    .btn-dark {
+      flex-shrink: 0;
+      background: #11170c;
+      color: white;
+    }
+
+    .btn-dark:hover {
+      background: #28351c;
     }
 
     footer {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 15px;
+      padding: 55px 0 25px;
+      background: #0b0e0c;
     }
 
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        background: #222;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 200px;
-        padding: 10px;
+    .footer-main {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      padding-bottom: 35px;
+    }
+
+    .footer-brand p {
+      max-width: 310px;
+      margin-top: 13px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-links h3 {
+      margin-bottom: 14px;
+      font-size: 13px;
+    }
+
+    .footer-links a {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-links a:hover {
+      color: var(--green-bright);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: #7f8981;
+      font-size: 11px;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        min-height: auto;
       }
 
-      .nav-links.active {
-        display: flex;
+      .hero-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .hero h1 {
+        font-size: clamp(43px, 6vw, 62px);
+        letter-spacing: -2.5px;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .product-card:last-child {
+        grid-column: 1 / -1;
+        max-width: calc(50% - 11px);
+        width: 100%;
+        justify-self: center;
+      }
+
+      .experience-grid {
+        gap: 35px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .container {
+        width: min(100% - 32px, var(--container));
+      }
+
+      .nav-content {
+        min-height: 68px;
       }
 
       .menu-toggle {
         display: block;
       }
 
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        padding: 22px 24px 26px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: #111612;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 12px 0;
+      }
+
+      .nav-links .nav-cta {
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      .hero {
+        padding: 125px 0 65px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero .eyebrow {
+        justify-content: center;
+      }
+
       .hero h1 {
-        font-size: 40px;
+        margin: 0 auto;
+        font-size: clamp(44px, 12vw, 64px);
+      }
+
+      .hero-copy {
+        margin: 20px auto 26px;
+        font-size: 14px;
+      }
+
+      .button-group {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        margin-top: 20px;
+      }
+
+      .hero-visual img {
+        max-height: 320px;
+      }
+
+      .visual-label {
+        right: 0;
+        bottom: 0;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        padding: 19px;
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .stat:last-child {
+        border-bottom: 0;
+      }
+
+      section.content-section {
+        padding: 72px 0;
+      }
+
+      .section-heading {
+        margin-bottom: 32px;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-card:last-child {
+        grid-column: auto;
+        max-width: none;
+      }
+
+      .product-image {
+        height: 230px;
+      }
+
+      .experience-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .experience-image,
+      .experience-image img {
+        min-height: 250px;
+      }
+
+      .banner-content {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .footer-main {
+        flex-direction: column;
+        gap: 28px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
       }
     }
   </style>
 </head>
-
 <body>
-
   <nav class="navbar">
     <div class="container nav-content">
-      <div class="logo">ACER</div>
-
-      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
+      <a class="logo" href="#home" aria-label="Acer home">acer<span>.</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">☰</button>
       <div class="nav-links" id="navLinks">
-        <a href="index1.html">Home</a>
-        <a href="index.html">Products</a>
-        <a href="#">Contact</a>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#experience">Our Advantage</a>
+        <a href="#contact" class="nav-cta">Explore Acer ↗</a>
       </div>
     </div>
   </nav>
 
-  <section class="hero">
-    <div>
-      <h1>ACER</h1>
-      <p>Empowering People Through Tech</p>
-      <a href="index.html" class="btn">SHOP NOW</a>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="container">
-      <h2>Why Choose Us?</h2>
-
-      <div class="cards">
-        <div class="card">
-          <h3>High Performance</h3>
-          <p>Powerful laptops for gaming and productivity</p>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy-wrap">
+          <div class="eyebrow">Technology for everyone</div>
+          <h1>Make your next move <span>powerful.</span></h1>
+          <p class="hero-copy">Discover technology designed to help you create, compete, connect, and take on whatever comes next.</p>
+          <div class="button-group">
+            <a href="#products" class="btn btn-primary">Explore Products <span>↗</span></a>
+            <a href="#experience" class="btn btn-outline">Discover Acer</a>
+          </div>
         </div>
-
-        <div class="card">
-          <h3>Affordable Prices</h3>
-          <p>Best value for your budget</p>
-        </div>
-
-        <div class="card">
-          <h3>Trusted Brand</h3>
-          <p>Quality products you can rely on</p>
+        <div class="hero-visual">
+          <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=1200&q=85" alt="Laptop displayed on a desk">
+          <div class="visual-label">
+            <small>Designed for what's next</small>
+            <strong>Power meets possibility.</strong>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="stats" aria-label="Acer technology highlights">
+      <div class="container stats-grid">
+        <div class="stat">
+          <strong>Everyday Computing</strong>
+          <span>For work, study, and daily life</span>
+        </div>
+        <div class="stat">
+          <strong>Gaming Performance</strong>
+          <span>Built for immersive play</span>
+        </div>
+        <div class="stat">
+          <strong>Creative Freedom</strong>
+          <span>Tools for your next big idea</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section products" id="products">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Find your next favorite</div>
+          <h2>Technology that moves you.</h2>
+          <p>From everyday essentials to high-performance machines, explore devices for every ambition.</p>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=85" alt="Laptop for everyday productivity" loading="lazy">
+            </div>
+            <div class="product-info">
+              <span class="product-tag">Everyday performance</span>
+              <h3>Aspire Series</h3>
+              <p>Your everyday companion for studying, working, and turning ideas into action.</p>
+              <a class="text-link" href="index.html">Explore laptops <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=900&q=85" alt="Laptop on a clean workspace" loading="lazy">
+            </div>
+            <div class="product-info">
+              <span class="product-tag">Built to create</span>
+              <h3>Swift Series</h3>
+              <p>Sleek, modern computing for people who value portability and productivity.</p>
+              <a class="text-link" href="index.html">Discover the series <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=900&q=85" alt="Gaming laptop on display" loading="lazy">
+            </div>
+            <div class="product-info">
+              <span class="product-tag">Level up</span>
+              <h3>Predator & Nitro</h3>
+              <p>Powerful gaming-inspired machines for competitive play and immersive worlds.</p>
+              <a class="text-link" href="index.html">Enter the game <span>→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section experience" id="experience">
+      <div class="container experience-grid">
+        <div class="experience-image">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1100&q=85" alt="People collaborating with technology" loading="lazy">
+        </div>
+        <div class="experience-copy">
+          <div class="eyebrow">Made for your world</div>
+          <h2>More than devices. A better way to do more.</h2>
+          <p>Technology should work around your goals. Whether you're learning a new skill, building a project, or exploring your next passion, find tools that help you move forward.</p>
+          <div class="benefit-list">
+            <div class="benefit">
+              <div class="benefit-icon">✦</div>
+              <div>
+                <strong>Performance for your day</strong>
+                <p>Choose devices to match your tasks, interests, and workflow.</p>
+              </div>
+            </div>
+            <div class="benefit">
+              <div class="benefit-icon">◈</div>
+              <div>
+                <strong>Options for every goal</strong>
+                <p>Explore computing experiences for productivity, creativity, and gaming.</p>
+              </div>
+            </div>
+            <div class="benefit">
+              <div class="benefit-icon">↗</div>
+              <div>
+                <strong>Ready for what's next</strong>
+                <p>Keep learning, making, and discovering with technology at your side.</p>
+              </div>
+            </div>
+          </div>
+          <a href="#products" class="btn btn-primary">Find Your Device ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="showcase-banner" id="contact">
+      <div class="container banner-content">
+        <div>
+          <h2>Your next great idea starts with the right technology.</h2>
+          <p>Explore the lineup and find the device that fits your world.</p>
+        </div>
+        <a href="index.html" class="btn btn-dark">Shop Products ↗</a>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    © 2026 ACER
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="logo" href="#home">acer<span>.</span></a>
+          <p>Empowering people through technology, creativity, and possibilities for what comes next.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Explore</h3>
+          <a href="#home">Home</a>
+          <a href="#products">Products</a>
+          <a href="#experience">Our Advantage</a>
+        </div>
+        <div class="footer-links">
+          <h3>Discover More</h3>
+          <a href="https://www.acer.com/" target="_blank" rel="noopener noreferrer">Official Acer Website ↗</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> ACER Showcase. For demonstration purposes.</span>
+        <span>Designed for performance. Made for possibility.</span>
+      </div>
+    </div>
   </footer>
 
   <script>
-    function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("active");
-    }
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("active");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-
 </body>
-
 </html>
